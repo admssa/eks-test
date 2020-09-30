@@ -1,0 +1,9 @@
+## Path where you want to provide rw access
+test_s3_paths = [
+  "admssa.test/*"
+]
+
+region = "eu-west-1"
+
+
+

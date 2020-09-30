@@ -5,17 +5,18 @@ data "external" "thumbprint" {
 }
 
 resource "aws_eks_cluster" "this" {
-  name = var.cluster_name
+  name                      = var.cluster_name
   enabled_cluster_log_types = var.logs_enabled
+  version                   = var.cluster_version
 
   vpc_config {
-    subnet_ids = var.subnets
+    subnet_ids              = var.subnets
     endpoint_private_access = var.api_is_private
     endpoint_public_access  = var.api_is_private ? false : true
-    security_group_ids = var.security_groups
+    security_group_ids      = var.security_groups
   }
-  role_arn = var.admins_role_arn
-  tags = var.tags
+  role_arn = aws_iam_role.eks_cluster_role.arn
+  tags     = var.tags
 }
 
 resource "aws_cloudwatch_log_group" "eks_logs" {

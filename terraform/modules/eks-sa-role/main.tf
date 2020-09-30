@@ -43,7 +43,7 @@ resource "aws_iam_role_policy_attachment" "sa_role_attachment" {
 }
 
 resource "aws_iam_role_policy_attachment" "policy_arns" {
-  count = var.enabled ? length(var.policy_arns) : 0
-  policy_arn =  var.policy_arns[count.index]
-  role = aws_iam_role.sa_assume_role[0].name
+  count      = var.enabled ? length(var.policy_arns) : 0
+  policy_arn = var.policy_arns[count.index]
+  role       = aws_iam_role.sa_assume_role[0].name
 }

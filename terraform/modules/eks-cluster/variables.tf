@@ -1,17 +1,15 @@
 variable "cluster_name" {
-  default = ""
+}
+
+variable "cluster_version" {
+  default = "1.17"
 }
 
 variable "vpc_id" {
-  default = ""
 }
 
 variable "subnets" {
   default = []
-}
-
-variable "admins_role_arn" {
-  default = ""
 }
 
 variable "api_is_private" {
@@ -23,7 +21,7 @@ variable "security_groups" {
 }
 
 variable "api_allowed_cidrs" {
-  default = []
+  default = ["0.0.0.0/0"]
 }
 
 variable "logs_enabled" {
