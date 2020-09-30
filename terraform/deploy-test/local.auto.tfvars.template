@@ -1,4 +1,4 @@
-## Path where you want to provide rw access
+## S3 paths where you want to provide rw access
 test_s3_paths = [
   "admssa.test/*"
 ]

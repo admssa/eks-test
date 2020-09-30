@@ -21,9 +21,8 @@ public_subnets_prefixes = [
   "192.168.15.0/24",
 ]
 
-test_s3_paths = [
-  "admssa.test/*"
-]
+## AWS region
+region = "eu-west-1"
 
 
 
